@@ -174,7 +174,7 @@ jobs:
 
   publish-vscode:
     # Enable when a vscode/ extension is added to this repository.
-    if: false
+    if: ${{ false }}
     name: Publish VS Code Extension
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: [build]
@@ -300,7 +300,7 @@ jobs:
 
   publish-jetbrains:
     # Enable when a jetbrains/ plugin is added to this repository.
-    if: false
+    if: ${{ false }}
     name: Publish JetBrains Plugin
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: [build]
