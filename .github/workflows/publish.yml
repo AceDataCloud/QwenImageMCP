@@ -173,9 +173,8 @@ jobs:
         run: ./mcp-publisher publish
 
   publish-vscode:
-    # Enable when a vscode/ extension is added to this repository.
     name: Publish VS Code Extension
-    if: ${{ false }}
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: [build]
     runs-on: ubuntu-latest
     steps:
@@ -298,9 +297,8 @@ jobs:
           echo "Triggered Dify plugin sync for qwen_image"
 
   publish-jetbrains:
-    # Enable when a jetbrains/ plugin is added to this repository.
     name: Publish JetBrains Plugin
-    if: ${{ false }}
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: [build]
     runs-on: ubuntu-latest
     steps:
